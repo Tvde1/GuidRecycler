@@ -32,7 +32,7 @@ public class Benchmark
         _concurrentGuidRecycler.Recycle(Guid.NewGuid());
         _guidRecyclerSlim.Recycle(Guid.NewGuid());
     }
-    
+
     [Benchmark(Baseline = true)]
     public Guid NewGuid()
     {
