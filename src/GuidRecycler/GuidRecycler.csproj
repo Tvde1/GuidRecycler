@@ -14,6 +14,7 @@
     <PackageTags>guid;recycle</PackageTags>
     <PackageProjectUrl>https://github.com/Tvde1/GuidRecycler</PackageProjectUrl>
 
+    <readme>README.md</readme>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconType>file</PackageIconType>
 
@@ -22,6 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
     <None Include="..\..\LICENSE" Pack="true" PackagePath="" />
     <None Include="..\..\icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
