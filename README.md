@@ -1,4 +1,12 @@
-# GuidRecycler
+GuidRecycler
+=======
+
+![GuidRecycler](https://raw.githubusercontent.com/Tvde1/GuidRecycler/main/icon.png "GuidRecycler")
+
+![CI](https://github.com/Tvde1/GuidRecycler/workflows/CI/badge.svg)
+[![NuGet](https://img.shields.io/nuget/dt/GuidRecycler.svg)](https://www.nuget.org/packages/GuidRecycler) 
+[![NuGet](https://img.shields.io/nuget/vpre/GuidRecycler.svg)](https://www.nuget.org/packages/GuidRecycler)
+
 *Save the planet, recycle your guids!*
 
 ## What is it?
@@ -11,7 +19,7 @@ Install-Package GuidRecycler
 ```
 
 ## Usage:
-Guid recyclers implement the common interface:
+Guid recyclers implement the common interface `IGuidRecycler` which has the following methods:
 
 ```csharp
 void Recycle(Guid guid);
@@ -29,6 +37,9 @@ There are curently two strategies implemented:
   A robust thread-safe concurrent guid recycler.
 - GuidRecyclerSlim  
   A non-thread-safe guid recycler that is faster than the concurrent guid recycler.
+
+### Microsoft.Extensions.DependencyInjection
+Coming soon
 
 ## Performance
 See the benchmarks in the benchmarks folder. It clearly shows that the both the concurrent guid recycler and the guid recycler slim are faster than the default guid generator.
