@@ -8,7 +8,6 @@
 
   <PropertyGroup>
     <Id>GuidRecycler</Id>
-    <Version>1.0.0</Version>
     <Authors>Tim van den Essen (Tvde1)</Authors>
     <Description>Save the environment, recycle your GUIDs!</Description>
     <RepositoryUrl>https://github.com/Tvde1/GuidRecycler</RepositoryUrl>
@@ -25,6 +24,13 @@
   <ItemGroup>
     <None Include="..\..\LICENSE" Pack="true" PackagePath="" />
     <None Include="..\..\icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MinVer" Version="4.3.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
