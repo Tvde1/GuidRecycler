@@ -1,19 +1,20 @@
 namespace GuidRecycler.Interfaces;
 
 /// <summary>
-/// A thead-safe class that recycles guids.
+/// The contract for a guid recycler.
 /// </summary>
 public interface IGuidRecycler
 {
     /// <summary>
-    /// Thread safe method to recycle a guid.
+    /// Recycle a guid to the recycle bin..
     /// </summary>
-    /// <param name="guid"></param>
+    /// <param name="guid">The guid to recycle</param>
     void Recycle(Guid guid);
 
     /// <summary>
-    /// Thread safe method to recieve a guid from the recycle bin.
+    /// Receive a guid from the recycle bin or
+    /// create a new one if the bin is empty.
     /// </summary>
-    /// <returns>A recycled guid</returns>
+    /// <returns>A possibly-recycled guid</returns>
     Guid GetGuid();
 }
