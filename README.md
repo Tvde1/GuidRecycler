@@ -24,7 +24,7 @@ Guid recyclers implement the common interface `IGuidRecycler` which has the foll
 ```csharp
 void Recycle(Guid guid);
 ```
-To recycle a guid.
+To recycle a guid to the recycle bin.
 
 ```csharp
 Guid GetGuid();
@@ -37,6 +37,35 @@ There are curently two strategies implemented:
   A robust thread-safe concurrent guid recycler.
 - GuidRecyclerSlim  
   A non-thread-safe guid recycler that is faster than the concurrent guid recycler.
+
+### Example
+The guid recycler can be created manually or retrieved through dependency injection.
+```csharp
+class UserService
+{
+    private readonly DatabaseContext _context;
+    private readonly IGuidRecycler recycler = new GuidRecyclerSlim();
+
+    public async Task DeleteUser(User user)
+    {
+        _context.Users.Remove(user);
+        recycler.Recycle(user.Id);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task<User> CreateUser(string name)
+    {
+        var user = new User
+        {
+            Id = recycler.GetGuid(),
+            Name = name
+        };
+        _context.Users.Add(user);
+        await _context.SaveChangesAsync();
+        return user;
+    }
+```
+As you can see, this code is very simple and eco-friendly. The only thing you need to do is to recycle the guid when you delete the entity and to get a new guid when you create a new entity.
 
 ### Microsoft.Extensions.DependencyInjection
 Coming soon
