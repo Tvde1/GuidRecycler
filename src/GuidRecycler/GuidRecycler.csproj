@@ -13,6 +13,7 @@
     <RepositoryUrl>https://github.com/Tvde1/GuidRecycler</RepositoryUrl>
     <PackageTags>guid;recycle</PackageTags>
     <PackageProjectUrl>https://github.com/Tvde1/GuidRecycler</PackageProjectUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
