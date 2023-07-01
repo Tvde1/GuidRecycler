@@ -9,6 +9,7 @@ GuidRecycler
 ![Guids Recycled](https://img.shields.io/badge/guids%20recycled-61k-blue)
 ![Code coverage](https://img.shields.io/badge/code%20coverage-59%25-yellow)
 ![Uptime](https://img.shields.io/badge/uptime-100%25-green)
+![Stars](https://img.shields.io/github/stars/Tvde1/GuidRecycler)
 
 *Save the planet, recycle your guids!*
 
