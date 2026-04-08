@@ -6,10 +6,6 @@ on:
     - '*.*.*'
 jobs:
   build:
-    strategy:
-      matrix: 
-        os: [ubuntu-latest]
-      fail-fast: false
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -24,12 +20,8 @@ jobs:
       run: ./Build.ps1
       shell: pwsh
     - name: Push to NuGet
-      env:
-        NUGET_URL: https://api.nuget.org/v3/index.json
-        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-      run: ./Push.ps1
-      shell: pwsh
-    - name: Artifacts
+      run: dotnet nuget push artifacts/**/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+    - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: artifacts
