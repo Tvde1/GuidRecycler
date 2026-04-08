@@ -4,6 +4,7 @@ GuidRecycler
 ![GuidRecycler](https://raw.githubusercontent.com/Tvde1/GuidRecycler/main/icon.png "GuidRecycler")
 
 ![CI](https://github.com/Tvde1/GuidRecycler/workflows/CI/badge.svg)
+[![.NET](https://img.shields.io/badge/.NET-10.0-512BD4)](https://dotnet.microsoft.com/download/dotnet/10.0)
 [![NuGet](https://img.shields.io/nuget/dt/GuidRecycler.svg)](https://www.nuget.org/packages/GuidRecycler)
 [![NuGet](https://img.shields.io/nuget/vpre/GuidRecycler.svg)](https://www.nuget.org/packages/GuidRecycler)
 ![Guids Recycled](https://img.shields.io/badge/guids%20recycled-61k-blue)
